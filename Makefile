@@ -1,4 +1,8 @@
 install:
+	@sudo apt install cython lp-solve liblpsolve55-dev python3-dev
+	@export LD_LIBRARY_PATH=/usr/lib/lp_solve/
+	@python3 -m pip install --upgrade pip setuptools
+	@pip install -r requirements.txt
 	@python setup.py sdist
 	@pip install dist/clara*.tar.gz
 
